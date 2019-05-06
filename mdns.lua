@@ -202,9 +202,9 @@ function mdns_query(service, timeout)
         local data, peeraddr, peerport = udp:receivefrom()            
         if data and (peerport == port) then
             mdns_parse(service, data, answers)
-            print(service)
+            -- print(service)
             print(data)
-            print(inspect(answers))
+            -- print(inspect(answers))
             if (browse) then
                 for _, ptr in ipairs(answers.ptr) do
                     assert(udp:sendto(mdns_make_query(ptr), ip, port))
