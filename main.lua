@@ -7,7 +7,7 @@ local inspect = require('inspect')
 local io = require("io")
 require('mdns')
 
-local res = mdns_query('_nmos-node._tcp.local')
+local res = mdns_query()
 
 if (res) then
     for k,v in pairs(res) do
